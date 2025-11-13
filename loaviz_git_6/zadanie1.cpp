@@ -68,7 +68,7 @@ int** generateGraph(int n) {
     int** arr = allocArr(n);
     for (int i = 0; i < n; ++i)
         for (int j = i; j < n; ++j)
-            arr[i][j] = arr[j][i] = rand() % 2; // неориентированный граф
+            arr[i][j] = arr[j][i] = rand() % 2;
     return arr;
 }
 
@@ -76,7 +76,7 @@ int main() {
     clearScreen();
     srand(static_cast<unsigned int>(time(nullptr)));
 
-    std::cout << "Задание 1: Генерация двух графов и вывод их матриц и списков смежности\n";
+    std::cout << "Генерация двух графов и вывод их матриц и списков смежности\n";
 
     int n1 = isInteger("Введите количество вершин G1: ");
     while (n1 < 2) n1 = isInteger("Минимум 2. Повторите: ");
@@ -100,6 +100,7 @@ int main() {
     freeArr(M1, n1);
     freeArr(M2, n2);
 
-    std::cout << "\nРабота завершена.\n";
+    std::cout << "\n\n";
+    
     return 0;
 }

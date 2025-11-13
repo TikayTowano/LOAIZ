@@ -65,7 +65,6 @@ int** generateGraph(int n) {
     return arr;
 }
 
-/* Бинарные операции */
 int** unionGraphs(int** a1, int** a2, int n1, int n2, int& newN) {
     newN = (n1 > n2 ? n1 : n2);
     int** g = allocArr(newN);
@@ -103,7 +102,7 @@ int main() {
     srand(time(NULL));
     clearScreen();
 
-    std::cout << "=== Задание 3: Объединение, пересечение, кольцевая сумма ===\n";
+    std::cout << "Объединение, пересечение, кольцевая сумма\n";
 
     int n1 = isInteger("Введите количество вершин G1: ");
     while (n1 < 2) n1 = isInteger("Минимум 2. Повторите: ");
@@ -121,7 +120,7 @@ int main() {
     while (true) {
         op = isInteger("Введите номер операции: ");
         if (op >= 1 && op <= 3) break;
-        std::cout << "Ошибка: неверный выбор.\n";
+        std::cout << "Ошибка: неверный выбор\n";
     }
 
     int newN;
@@ -139,6 +138,7 @@ int main() {
     freeArr(g1, n1);
     freeArr(g2, n2);
 
-    std::cout << "\nРабота завершена.\n";
+    std::cout << "\n\n";
+    
     return 0;
 }

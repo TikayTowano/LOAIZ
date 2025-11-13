@@ -72,8 +72,11 @@ int** cartesianProduct(int** a1, int** a2, int n1, int n2, int& newN) {
         for (int j1 = 0; j1 < n2; ++j1) {
             for (int i2 = 0; i2 < n1; ++i2) {
                 for (int j2 = 0; j2 < n2; ++j2) {
-                    if ((i1 == i2 && a2[j1][j2] == 1) || (j1 == j2 && a1[i1][i2] == 1)) {
-                        g[i1 * n2 + j1][i2 * n2 + j2] = 1;
+                    if (j1 == j2 && a1[i1][i2] == 1) {
+                        g[i1 * n2 + j1][i2 * n2 + j2] = a1[i1][i2];
+                    }
+                    if (i1 == i2 && a2[j1][j2] == 1) {
+                        g[i1 * n2 + j1][i2 * n2 + j2] = a2[j1][j2] ;
                     }
                 }
             }
@@ -86,7 +89,7 @@ int main() {
     srand(time(NULL));
     clearScreen();
 
-    std::cout << "=== Задание 4: Декартово произведение графов ===\n";
+    std::cout << "Декартово произведение графов ===\n";
 
     int n1 = isInteger("Введите количество вершин G1: ");
     while (n1 < 2) n1 = isInteger("Минимум 2. Повторите: ");
@@ -109,6 +112,7 @@ int main() {
     freeArr(g2, n2);
     freeArr(res, newN);
 
-    std::cout << "\nРабота завершена.\n";
+    std::cout << "\n\n";
+    
     return 0;
 }
