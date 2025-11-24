@@ -40,7 +40,7 @@ int main() {
         numG = isInteger("Введите количество вершин графа: ");
     }
 
-    int** G = new int*[numG];
+    int** G = new int* [numG];
     for (int i = 0; i < numG; i++)
         G[i] = new int[numG];
 
@@ -59,7 +59,7 @@ int main() {
         std::cout << "\n";
     }
 
-    Node** adj = new Node*[numG];
+    Node** adj = new Node * [numG];
     for (int i = 0; i < numG; i++)
         adj[i] = nullptr;
 
@@ -116,7 +116,7 @@ int main() {
 }
 
 void pushStack(int v) {
-    StackNode* p = new StackNode{v, stackHead};
+    StackNode* p = new StackNode{ v, stackHead };
     stackHead = p;
 }
 
